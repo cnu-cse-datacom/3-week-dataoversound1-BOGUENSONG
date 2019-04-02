@@ -113,7 +113,6 @@ def extract_packet(freqs):
     freqs = freqs[::2]
     bit_chunks = [int(round((f - START_HZ) / STEP_HZ)) for f in freqs]
     bit_chunks = [c for c in bit_chunks[1:] if 0 <= c < (2 ** BITS)]
-    print("bit_chunks : " , bit_chunks)
     return bytearray(decode_bitchunks(BITS, bit_chunks))
 
 def display(s):
